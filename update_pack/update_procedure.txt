@@ -1,0 +1,25 @@
+Update instructions from version 1.5 to 2.0 -
+PLEASE READ AND FOLLOW THE STEPS CAREFULLY.
+Before starting, keep a backup of files and database of your running 1.5 version. So that there will be no fear of losing data.
+
+1. Open the update_pack folder. Copy the assets folder from here and replace your server's assets folder.
+	Folder location: Your application root folder/assets
+
+2. Copy the controllers folder from here and replace your server's controllers folder.
+	Folder location: Your application root folder/application/controllers
+
+3. Copy the helpers folder from here and replace your server's helpers folder.
+	Folder location: Your application root folder/application/helpers
+
+4. Copy the models folder from here and replace your server's models folder.
+	Folder location: Your application root folder/application/models
+
+5. Copy the views folder from here and replace your server's views folder.
+	Folder location: Your application root folder/application/views
+
+6. Import the update.sql file into your database.
+
+You have successfully updated your application. After that, Login as Admin.
+
+The latest version of 2.0. If you face any kind of difficulties, let us know through tickets.
+That's it.
