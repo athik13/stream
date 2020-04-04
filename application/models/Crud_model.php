@@ -252,6 +252,24 @@ class Crud_model extends CI_Model {
 		}
 	}
 
+	function validate_subscription_custom($user_id)
+	{
+		$timestamp_current	=	strtotime(date("Y-m-d H:i:s"));
+		$this->db->where('user_id', $user_id);
+		$this->db->where('timestamp_to >' ,  $timestamp_current);
+		$this->db->where('timestamp_from <' ,  $timestamp_current);
+		$this->db->where('status' ,  1);
+		$query				=	$this->db->get('subscription');
+		if ($query->num_rows() > 0) {
+            $row = $query->row();
+			$subscription_id	=	$row->subscription_id;
+			return $subscription_id;
+		}
+        else if ($query->num_rows() == 0) {
+			return false;
+		}
+	}
+
 	function get_subscription_detail($subscription_id)
 	{
 		$this->db->where('subscription_id', $subscription_id);
@@ -589,9 +607,33 @@ class Crud_model extends CI_Model {
 
 	function update_user($user_id = '')
 	{
+		$plan = $this->db->get_where('plan', array('plan_id' => $this->input->post('plan_id')))->row_array();
+
 		$data['name']				=	$this->input->post('name');
 		$data['email']				=	$this->input->post('email');
 		$this->db->update('user', $data, array('user_id'=>$user_id));
+
+		if($this->input->post('plan_id') !== '0') {
+			$subscription_id	=	$this->crud_model->validate_subscription_custom($user_id);
+			$this->db->update('subscription', array('status' => 0), array('subscription_id' => $subscription_id));
+	
+			$data1['user_id']            = $user_id;
+			$data1['plan_id']            = $this->input->post('plan_id');
+			$data1['price_amount']       = $plan['price'];
+			$data1['paid_amount']        = $plan['price'];
+			$data1['currency']           = 'USD';
+			$data1['payment_timestamp']  = strtotime(date("Y-m-d H:i:s"));
+			$data1['timestamp_from']     = strtotime(date("Y-m-d H:i:s"));
+			$data1['timestamp_to']       = strtotime('+30 days', $data1['timestamp_from']);
+			$data1['payment_method']     = 'ADMIN_USER';
+			$data1['payment_details']    = 'ADD_BY_ADMIN_USER';
+			$data1['status']             = 1;
+			$this->db->insert('subscription' , $data1);
+		} else {
+			$subscription_id	=	$this->crud_model->validate_subscription_custom($user_id);
+			$this->db->update('subscription', array('status' => 0), array('subscription_id' => $subscription_id));
+		}
+
 	}
 
     function get_mylist_exist_status($type ='', $id ='')

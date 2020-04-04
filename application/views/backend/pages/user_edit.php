@@ -32,11 +32,22 @@
 														=	$this->db->get_where('subscription', array('plan_id'=> $current_plan_id))->row()->timestamp_to;
 						}
 					?>
-
 					<div class="form-group mb-3">
-						<label for="s">User's Subscription</label>
-						<input type="text" class="form-control" id = "sub" name="sub" value="<?php echo $current_plan_name . " (" . $current_plan_screens . " screens)"; ?>">
+						<label for="email">User's Subscription</label>
+						<select class="form-control" name="plan_id">
+							<option class="form-control" value="0">No Subscription</option>
+							<?php
+								$plans = $this->crud_model->get_active_plans();
+							
+								foreach ($plans as $row):
+							?>
+
+								<option class="form-control" value="<?php echo $row['plan_id'];?>" <?php if($row['plan_id'] == $current_plan_id) { echo 'selected'; } ?>><?php echo $row['name'];?></option>							
+
+							<?php endforeach;?>
+						</select>
 					</div>
+
 
 					<div class="form-group">
 						<input type="submit" class="btn btn-success" value="Update">
