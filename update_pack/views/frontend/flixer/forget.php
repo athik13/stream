@@ -8,7 +8,7 @@
 		</a>
 	</div>
     <div style="float: right;margin: 18px 40px; height: 50px;">
-        <a href="<?php echo base_url();?>index.php?home/signin" class="" style="color: #e50914;font-weight: 700;font-size: 20px;">
+        <a href="<?php echo base_url();?>index.php?home/signin" class="" style="color: #00A0EC;font-weight: 700;font-size: 20px;">
         	<?php echo get_phrase('sign_in');?></a>
     </div>
 	<form action="<?php echo base_url();?>index.php?home/forget" method="post">

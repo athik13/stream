@@ -31,7 +31,7 @@
 			<ul class="nav navbar-nav">
 				<!-- MOVIES GENRE WISE-->
 				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="" style="color: #e50914; font-weight: bold;">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="" style="color: #00A0EC; font-weight: bold;">
 						<?php echo get_phrase('Movie');?> <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="themes">
@@ -55,7 +55,7 @@
 				</li>
 				<!-- TV SERIES GENRE WISE-->
 				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="" style="color: #e50914; font-weight: bold;">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="" style="color: #00A0EC; font-weight: bold;">
 						<?php echo get_phrase('tv_series');?> <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="themes">

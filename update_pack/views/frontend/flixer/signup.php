@@ -7,7 +7,7 @@
 		</a>
 	</div>
 	<div style="float: right;margin: 18px 40px; height: 50px;">
-		<a href="<?php echo base_url();?>index.php?home/signin" class="" style="color: #e50914;font-weight: 700;font-size: 20px;">Sign In</a>
+		<a href="<?php echo base_url();?>index.php?home/signin" class="" style="color: #00A0EC;font-weight: 700;font-size: 20px;">Sign In</a>
 	</div>
 </div>
 <!-- ERROR MESSAGE -->
