@@ -11,8 +11,8 @@
 	$featured_movie		=	$this->db->get_where('movie', array('featured'=>1))->row();
 	
 	?>
-<div style="background-image: url(<?php echo $this->crud_model->get_poster_url('movie' , $featured_movie->movie_id);?>); background-size:cover; width: 100%;">
-	<div class="mobile_responsive" style="font-weight: bold;color: #fff;">
+<div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<?php echo $this->crud_model->get_poster_url('movie' , $featured_movie->movie_id);?>); background-size:cover; width: 100%;">
+	<div class="mobile_responsive" style="font-weight: bold;color: #fff; ">
 		<h1 class="mobile_responsive_text_bold"><?php echo $featured_movie->title;?></h1>
 		<h5 class="mobile_responsive_sort_description" style="color: #ccc; max-width: 900px;"><?php echo $featured_movie->description_short;?></h5>
 		<a href="<?php echo base_url();?>index.php?browse/playmovie/<?php echo $featured_movie->movie_id;?>" 

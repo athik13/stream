@@ -993,5 +993,6 @@
     "finish_cancellation": "Finish cancellation",
     "go_back": "Go back",
     "membership_cancelled_successfully.": "Membership cancelled successfully.",
-    "you_can_purchase_or_renew_it_anytime.": "You can purchase or renew it anytime."
+    "you_can_purchase_or_renew_it_anytime.": "You can purchase or renew it anytime.",
+    "actor": "Actor"
 }
