@@ -37,13 +37,13 @@
 					<?php echo get_phrase('Email_Address');?>
 				</div>
 				<div class="black_text">
-					<input type="email" name="email" style="padding: 10px; max-width: 400px; width: 100%;" autocomplete="off" />
+					<input type="email" name="email" style="padding: 10px; max-width: 400px; width: 100%;" autocomplete="off" required>
 				</div>
 				<div style="margin:10px 0px 5px;">
 					<?php echo get_phrase('Password');?>
 				</div>
 				<div class="black_text">
-					<input type="password" name="password" style="padding: 10px; max-width: 400px; width: 100%;" />
+					<input type="password" name="password" style="padding: 10px; max-width: 400px; width: 100%;" required>
 				</div>
 				<button type="submit"  class="btn btn-primary" style=" max-width: 150px; width: 100%; margin: 20px 0px;">
 					<?php echo get_phrase('Register');?></button>

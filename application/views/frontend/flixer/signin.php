@@ -24,13 +24,13 @@
 						<?php echo get_phrase('Email');?> 
 					</div>
 					<div class="black_text">
-						<input type="email" name="email" style="padding: 10px; width:100%;" />
+						<input type="email" name="email" style="padding: 10px; width:100%;" required>
 					</div>
 					<div class="black_text" style="margin-top: 20px;">
 						<?php echo get_phrase('Password');?>
 					</div>
 					<div class="black_text">
-						<input type="password" name="password" style="padding: 10px; width:100%;" />
+						<input type="password" name="password" style="padding: 10px; width:100%;" required>
 					</div>
 					<button class="btn btn-danger" style=" width: 100%; margin: 20px 0px;"> <?php echo get_phrase('sign_in');?> </button>
 				</form>
